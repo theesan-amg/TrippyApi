@@ -18,7 +18,6 @@ app.set('view engine', 'hbs');
 app.set('views', 'views');
 
 
-//  J'AI RELIER a hbs grace a render j'ai afficher le formulaire 
 // app.get("/auth/login" , (req, res) => {
 //   async function (next) {
 //   const salt = await bcrypt.genSalt();
@@ -48,17 +47,16 @@ app.post('/hotels', (req, res) => {
 })
 
 
-// async avec await 
 app.put('/hotels/:id', async (req, res) => {
   if (req.query.name) {
     hotels[req.params.id - 1] = req.query.name
     res.status(200).json({
-      message: "Hotel updated",
+      message: "Hotel ajouter",
       hotels: hotels
     })
   } else {
     res.status(500).json({
-      message: "You have to provide a name for the hotel you wanna update"
+      message: "Error"
     })
   }
 
